@@ -11,6 +11,7 @@ import org.apache.spark.util.Utils
 import java.io.BufferedOutputStream
 import java.io.File
 import java.io.FileOutputStream
+import java.io.Serializable
 import java.util.*
 import kotlin.script.experimental.api.KotlinType
 import kotlin.script.experimental.api.dependencies
@@ -89,7 +90,7 @@ class SparkPlugin : Logging(),  Plugin {
 //        repl.state.history.add(SyntheticImportSnippet(Holder::class.qualifiedName!!, "spark", "spark"))
     }
 
-    object Holder {
+    object Holder : Serializable {
         val spark: SparkSession by lazy { sparkSessionDelegate }
         val sc: JavaSparkContext by lazy { sparkContextDelegate }
 

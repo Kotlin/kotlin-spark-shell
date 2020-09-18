@@ -12,11 +12,14 @@ import java.io.FileReader
 import java.util.*
 import kotlin.script.experimental.api.ScriptCompilationConfiguration
 import kotlin.script.experimental.api.ScriptEvaluationConfiguration
+import kotlin.script.experimental.api.baseClass
 import kotlin.script.experimental.jvm.baseClassLoader
 import kotlin.script.experimental.jvm.defaultJvmScriptingHostConfiguration
 import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvm.updateClasspath
 import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContext
+
+abstract class SparkScriptBase : java.io.Serializable
 
 object Main {
     @JvmStatic
@@ -26,6 +29,7 @@ object Main {
                         configuration(),
                         defaultJvmScriptingHostConfiguration,
                         ScriptCompilationConfiguration {
+                            baseClass(SparkScriptBase::class)
                             jvm {
                                 updateClasspath(replJars())
                                 scriptCompilationClasspathFromContext(wholeClasspath = true)
