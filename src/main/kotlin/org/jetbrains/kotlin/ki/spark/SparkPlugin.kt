@@ -26,7 +26,7 @@ import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvm.updateClasspath
 import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContext
 
-class SparkPlugin : Logging(),  Plugin {
+class SparkPlugin : Logging(), Plugin {
     lateinit var version: String
 
     override fun init(repl: Shell, config: ReplConfiguration) {
@@ -58,12 +58,6 @@ class SparkPlugin : Logging(),  Plugin {
                         writeClass(fullPath(path), bytes)
                     }
                 }
-//                {
-//                    if (it.path.contains('/')) {
-//                        // Right now it is not needed and we can skip WEB-INF/$MODULE_NAME.kotlin_module here
-//                        // because it will be empty anyway
-//                    } else writeClass(outputDir.absolutePath + File.separator + it.path, it.bytes)
-//                }
             }
         })
 
@@ -77,17 +71,12 @@ class SparkPlugin : Logging(),  Plugin {
         repl.updateCompilationConfiguration {
             implicitReceivers.append(KotlinType(Holder::class))
             dependencies.append(dependenciesClasspath)
+            updateClasspath(replJars)
         }
 
         repl.updateEvaluationConfiguration {
             implicitReceivers.append(Holder)
-//            providedProperties
-//            updateClasspath(replJars())
         }
-
-//        repl.addClasspathRoots(replJars)
-//        repl.state.history.add(SyntheticImportSnippet(Holder::class.qualifiedName!!, "sc", "sc"))
-//        repl.state.history.add(SyntheticImportSnippet(Holder::class.qualifiedName!!, "spark", "spark"))
     }
 
     object Holder : Serializable {
@@ -141,7 +130,7 @@ class SparkPlugin : Logging(),  Plugin {
         return sparkSession
     }
 
-    override fun cleanUp() { }
+    override fun cleanUp() {}
 
     private fun getAddedJars(): List<String> {
         val jars = System.getProperty("spark.jars")
@@ -162,18 +151,16 @@ class SparkPlugin : Logging(),  Plugin {
     }
 
     private fun hiveClassesArePresent(): Boolean {
-        return false
-//        TODO()
-//        return try {
-//            Utils.classForName("org.apache.spark.sql.hive.HiveSessionStateBuilder")
-//            Utils.classForName("org.apache.hadoop.hive.conf.HiveConf")
-//            true
-//        } catch (e: Exception) {
-//            when (e) {
-//                is ClassNotFoundException, is NoClassDefFoundError -> false
-//                else -> throw e
-//            }
-//        }
+        return try {
+            Utils.classForName<Class<*>>("org.apache.spark.sql.hive.HiveSessionStateBuilder", true, false)
+            Utils.classForName<Class<*>>("org.apache.hadoop.hive.conf.HiveConf", true, false)
+            true
+        } catch (e: Exception) {
+            when (e) {
+                is ClassNotFoundException, is NoClassDefFoundError -> false
+                else -> throw e
+            }
+        }
     }
 
     fun hadoopConfiguration() = Holder.sc.hadoopConfiguration()
