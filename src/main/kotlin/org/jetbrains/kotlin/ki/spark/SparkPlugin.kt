@@ -16,13 +16,11 @@ import java.util.*
 import kotlin.script.experimental.api.KotlinType
 import kotlin.script.experimental.api.dependencies
 import kotlin.script.experimental.api.implicitReceivers
-import kotlin.script.experimental.api.providedProperties
 import kotlin.script.experimental.jvm.JvmDependency
 import kotlin.script.experimental.jvm.impl.KJvmCompiledModuleInMemory
 import kotlin.script.experimental.jvm.impl.copyWithoutModule
 import kotlin.script.experimental.jvm.impl.scriptMetadataPath
 import kotlin.script.experimental.jvm.impl.toBytes
-import kotlin.script.experimental.jvm.jvm
 import kotlin.script.experimental.jvm.updateClasspath
 import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContext
 

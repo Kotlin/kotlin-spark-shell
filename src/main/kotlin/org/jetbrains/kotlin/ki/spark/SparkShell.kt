@@ -16,7 +16,7 @@ import kotlin.script.experimental.jvm.util.scriptCompilationClasspathFromContext
 
 abstract class SparkScriptBase : java.io.Serializable
 
-object Main {
+object SparkShell {
     @JvmStatic
     fun main(args: Array<String>) {
         val repl =
