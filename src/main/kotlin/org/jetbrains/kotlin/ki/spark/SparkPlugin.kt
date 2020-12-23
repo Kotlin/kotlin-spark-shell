@@ -150,8 +150,8 @@ class SparkPlugin : Logging(), Plugin {
 
     private fun hiveClassesArePresent(): Boolean {
         return try {
-            Utils.classForName<Class<*>>("org.apache.spark.sql.hive.HiveSessionStateBuilder", true, false)
-            Utils.classForName<Class<*>>("org.apache.hadoop.hive.conf.HiveConf", true, false)
+            Utils.classForName("org.apache.spark.sql.hive.HiveSessionStateBuilder")
+            Utils.classForName("org.apache.hadoop.hive.conf.HiveConf")
             true
         } catch (e: Exception) {
             when (e) {
