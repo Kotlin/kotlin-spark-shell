@@ -188,6 +188,12 @@
                                 </includes>
                             </artifactSet>
                             <outputFile>lib/${project.artifactId}-${project.version}.jar</outputFile>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.antlr</pattern>
+                                    <shadedPattern>org.jetbrains.kotlin.ki.antlr</shadedPattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
