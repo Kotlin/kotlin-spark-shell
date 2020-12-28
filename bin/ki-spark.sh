@@ -1,11 +1,5 @@
 #!/bin/bash
 
-if [ -z "${KI_SHELL_HOME}" ]
-then
-  echo "KI_SHELL_HOME is not specified"
-  exit 1
-fi
-
 if [ -z "${SPARK_HOME}" ]
 then
   echo "SPARK_HOME is not specified"
