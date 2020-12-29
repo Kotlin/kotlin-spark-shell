@@ -6,11 +6,11 @@
 
 
     <groupId>org.jetbrains.kotlin</groupId>
-    <artifactId>ki-spark</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <artifactId>ki-spark-${spark.version}_${scala.version}</artifactId>
+    <version>0.1-SNAPSHOT</version>
 
     <properties>
-        <kotlin.version>1.4.0</kotlin.version>
+        <kotlin.version>1.4.10</kotlin.version>
         <spark.version>3.0.1</spark.version>
         <scala.version>2.12</scala.version>
         <jvm.version>1.8</jvm.version>
@@ -22,7 +22,12 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>ki-shell</artifactId>
-            <version>0.3.0-SNAPSHOT</version>
+            <version>0.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlinx.spark</groupId>
+            <artifactId>kotlin-spark-api-3.0.0_${scala.version}</artifactId>
+            <version>1.0.0-preview1</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
