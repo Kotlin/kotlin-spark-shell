@@ -1,4 +1,4 @@
-package org.jetbrains.kotlin.ki.spark
+package org.jetbrains.kotlinx.ki.spark
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

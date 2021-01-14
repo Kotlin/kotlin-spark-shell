@@ -9,6 +9,6 @@ fi
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 ${SPARK_HOME}/bin/spark-submit \
-  --class org.jetbrains.kotlin.ki.spark.SparkShell \
+  --class org.jetbrains.kotlinx.ki.spark.SparkShell \
   ${SCRIPT_DIR}/../lib/ki-spark-*.jar $@
 

@@ -1,10 +1,10 @@
-package org.jetbrains.kotlin.ki.spark
+package org.jetbrains.kotlinx.ki.spark
 
-import org.jetbrains.kotlin.ki.shell.Shell
-import org.jetbrains.kotlin.ki.shell.configuration.CachedInstance
-import org.jetbrains.kotlin.ki.shell.configuration.ReplConfiguration
-import org.jetbrains.kotlin.ki.shell.configuration.ReplConfigurationImpl
-import org.jetbrains.kotlin.ki.shell.replJars
+import org.jetbrains.kotlinx.ki.shell.Shell
+import org.jetbrains.kotlinx.ki.shell.configuration.CachedInstance
+import org.jetbrains.kotlinx.ki.shell.configuration.ReplConfiguration
+import org.jetbrains.kotlinx.ki.shell.configuration.ReplConfigurationImpl
+import org.jetbrains.kotlinx.ki.shell.replJars
 import kotlin.script.experimental.api.ScriptCompilationConfiguration
 import kotlin.script.experimental.api.ScriptEvaluationConfiguration
 import kotlin.script.experimental.api.baseClass
