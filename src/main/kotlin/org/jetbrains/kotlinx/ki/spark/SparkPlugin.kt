@@ -1,7 +1,7 @@
-package org.jetbrains.kotlin.ki.spark
+package org.jetbrains.kotlinx.ki.spark
 
-import org.jetbrains.kotlin.ki.shell.*
-import org.jetbrains.kotlin.ki.shell.configuration.ReplConfiguration
+import org.jetbrains.kotlinx.ki.shell.*
+import org.jetbrains.kotlinx.ki.shell.configuration.ReplConfiguration
 
 import org.apache.spark.SparkConf
 import org.apache.spark.api.java.JavaSparkContext

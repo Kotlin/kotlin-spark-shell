@@ -7,4 +7,4 @@ if not defined SPARK_HOME (
 
 set SCRIPT_PATH=%~dp0
 
-%SPARK_HOME%\bin\spark-submit --class org.jetbrains.kotlin.ki.spark.SparkShell %SCRIPT_PATH%\..\lib\ki-spark-*.jar %*
+%SPARK_HOME%\bin\spark-submit --class org.jetbrains.kotlinx.ki.spark.SparkShell %SCRIPT_PATH%\..\lib\ki-spark-*.jar %*
