@@ -26,8 +26,8 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlinx.spark</groupId>
-            <artifactId>kotlin-spark-api-3.0.0_${scala.version}</artifactId>
-            <version>1.0.0-preview1</version>
+            <artifactId>kotlin-spark-api-2.4_${scala.version}</artifactId>
+            <version>1.0.0-preview2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
