@@ -4,7 +4,7 @@
 
   <groupId>org.jetbrains.kotlinx</groupId>
   <artifactId>ki-spark-${spark.version}_${scala.version}</artifactId>
-  <version>0.1</version>
+  <version>0.1-SNAPSHOT</version>
 
   <packaging>jar</packaging>
   <name>Ki Shell :: Kotlin for Apache Spark plugin</name>
@@ -217,7 +217,7 @@
             <phase>package</phase>
             <configuration>
               <artifactSet>
-                <includes />
+                <includes></includes>
               </artifactSet>
               <outputFile>lib/${project.artifactId}-${project.version}.jar</outputFile>
               <relocations>
@@ -304,6 +304,7 @@
         <configuration>
           <releaseProfiles>release-sign</releaseProfiles>
           <pushChanges>false</pushChanges>
+          <localCheckout>true</localCheckout>
         </configuration>
       </plugin>
       <plugin>
@@ -321,6 +322,7 @@
 
     </plugins>
   </build>
+  <url>https://github.com/Kotlin/kotlin-spark-shell</url>
   <licenses>
     <license>
       <name>The Apache License, Version 2.0</name>
@@ -345,7 +347,7 @@
     <connection>scm:git:git://github.com/Kotlin/kotlin-spark-shell.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/Kotlin/kotlin-spark-shell.git</developerConnection>
     <url>https://github.com/Kotlin/kotlin-spark-shell/tree/master</url>
-    <tag>v0.1</tag>
+    <tag>HEAD</tag>
   </scm>
   <pluginRepositories>
     <pluginRepository>
@@ -389,5 +391,4 @@
       </build>
     </profile>
   </profiles>
-
 </project>
