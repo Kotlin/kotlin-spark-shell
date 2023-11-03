@@ -1,5 +1,8 @@
 # Kotlin Language Support for Apache Spark
 
+[![Kotlin Experimental](https://kotl.in/badges/experimental.svg)](https://kotlinlang.org/docs/components-stability.html)
+[![JetBrains team project](https://jb.gg/badges/team.svg)](https://confluence.jetbrains.com/display/ALL/JetBrains+on+GitHub)
+
 The project is a Kotlin Shell for Apache Spark.
 It's based on [ki-shell](https://github.com/Kotlin/kotlin-interactive-shell)
 and provide the same user experience, including syntax highlighting, a type inference,
